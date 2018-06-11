@@ -1,13 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div ref="logo">
+
+    </div>
+    <div class="lenossa">
+      teste
+    </div>
   </div>
 </template>
 
 <script>
+import '@/assets/styles.css'
+import lottie from 'lottie-web'
+
 export default {
-  name: 'App'
+  name: 'App',
+  mounted () {
+    let animation = lottie.loadAnimation({
+      container: this.$refs.logo,
+      renderer: 'svg',
+      // loop: true,
+      autoplay: true,
+      path: 'https://www.jasonbase.com/things/4K63.json'
+    })
+  }
 }
 </script>
 
